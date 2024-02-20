@@ -59,9 +59,11 @@ NAVIGATION BAR
     padding: 0 50px;
     font-size: 18px;
     font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .nav__wrapper {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -82,7 +84,7 @@ NAVIGATION BAR
 .nav__links {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     max-width: 430px;
 }
@@ -94,14 +96,16 @@ NAVIGATION BAR
 }
 
 .home{
-    color: #6030b1;
+    color: darkred;
 }
 .find {
-    color: #0a1f44;
+    color: goldenrod;
+    -webkit-text-stroke-color: darkred;
+    -webkit-text-stroke-width: 1px;
 }
 
 .nav__link::after{
-    background-color: #0a1f44;
+    background-color: goldenrod;
     transition: all 250ms;
     content: "";
     position: absolute;
@@ -120,9 +124,37 @@ NAVIGATION BAR
 }
 
 .home::after{
-    background-color: rgba(96, 48, 177, 0.8);
+    background-color: darkred;
 }
 
+
+.nav__menu {
+    position: relative;
+    display: none;
+}
+
+.nav__menu--displayed {
+    width: 50px;
+    height: 27px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: content-box;
+    padding: 1px;
+    cursor: pointer;
+}
+
+.fa-circle {
+    color: darkred;
+    font-size: 10px;
+    width: 0.1px;
+    height: 0.1px;
+    border-radius: 50%;
+    padding: 1px;
+    border: 4px solid goldenrod;
+    letter-spacing: 0.14px;
+    line-height: 20px;
+}
 /*
 LANDING PAGE
 */
@@ -311,5 +343,14 @@ button .loading {
     }
     h2 {
         margin-bottom: 80px;
+    }
+}
+
+@media (max-width: 750px) {
+    .nav__menu {
+        display: block;
+    }
+    .nav__links {
+        display: none;
     }
 }
