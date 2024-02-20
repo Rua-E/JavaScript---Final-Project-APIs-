@@ -14,16 +14,35 @@ html {
 h1 {
     font-size: 50px;
     max-width: 730px;
-    font-weight: 730px;
+    font-weight: 900px;
     line-height: 1.25;
     color: darkred;
     text-align: center;
     margin-bottom: 30px;
     letter-spacing: 0.14px;
+    -webkit-text-stroke-color: goldenrod;
+    -webkit-text-stroke-width: 2px;
 }
 
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #0a1f44;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.gold {
+    color: darkred;
+    -webkit-text-stroke-color: goldenrod;
+    -webkit-text-stroke-width: 1px;
+}
+
+
 /*
-    NAVIGATION BAR
+NAVIGATION BAR
 */
 
 .app {
@@ -69,9 +88,9 @@ h1 {
 }
 
 .nav__link {
-   position: relative;
-   text-decoration: none;
-   transition: all 300ms ease;
+    position: relative;
+    text-decoration: none;
+    transition: all 300ms ease;
 }
 
 .home{
@@ -105,7 +124,7 @@ h1 {
 }
 
 /*
-    LANDING PAGE
+LANDING PAGE
 */
 
 #landing__page {
@@ -129,14 +148,14 @@ h1 {
 }
 
 .website__description--container {
-   z-index: 10;
-   background-color: rgb(255, 255, 255);
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+    z-index: 10;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.descripion__title {
+.descripion__title .description__subtitle .search__wrapper{
     animation-duration: 1500ms;
     transition-duration: 1500ms;
     animation-delay: 300ms;
@@ -144,14 +163,135 @@ h1 {
     width: 100%;
 }
 
+.search__wrapper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid #0a1f44;
+    color: #0a1f44;
+    display: inline-block;
+    height: 70px;
+    line-height: 40px;
+    outline: none;
+    padding: 0 15px;
+    transition: border-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    width: 100%;
+    font-size: 24px;
+    padding-left: 25px;
+}
+
+input:focus {
+    box-shadow: 0 0 0 1px goldenrod;
+}
+
+button {
+    width: 200px;
+    margin-left: 20px;
+    font-size: 40px;
+    color: #fff;
+    border-radius: 20px;
+    border: 3px solid goldenrod;
+    transition: all 300ms ease;
+    background-color: darkred;
+    box-shadow: 7px 7px 17px rgba(134, 93, 204, .3);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff328f;
+    border: 1px solid #ff328f;
+}
+
+button:active {
+    transform: scale(0.95);
+}
 
 
+button:focus{
+    outline: none;
+    background-color: #0a1f44;
+    border-color: #0a1f44;
+    box-shadow: none;
+}
+
+button:focus .mag__glass {
+    display: none;
+}
+
+button:focus .spinner__overlay {
+    display: block;
+}
+
+button .loading:active{
+    transform: scale(1);
+}
+
+button .loading:hover {
+    background-color: #000;
+}
+
+
+button .loading {
+    cursor: no-drop;
+}
+
+
+.spinner__overlay {
+    display: none;
+    animation: spinner 750ms infinite linear;
+}
+
+/* .spinner__overlay .loading:active {
+    display: block;
+} */
+
+
+
+
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* .spinner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+.spinner__overlay--loading {
+    background-color: #242424;
+    font-size: 80px;
+}
+.spinner__overlay--visible {
+    z-index: 1;
+    display: flex;
+} */
 
 .landing__page--logo {
-    position: absolute;
     max-width: max-content;
     height: 50vh;
     bottom: 80px;
+    display: flex;
     vertical-align: middle;
 }
 
@@ -168,5 +308,8 @@ h1 {
     }
     h1 {
         font-size: 57px;
+    }
+    h2 {
+        margin-bottom: 80px;
     }
 }
