@@ -42,7 +42,7 @@ h2 {
 
 
 /*
-NAVIGATION BAR
+    NAVIGATION BAR
 */
 
 .app {
@@ -66,12 +66,13 @@ NAVIGATION BAR
 
 .movies__nav {
     height: 326px;
-    padding: 40px 15px;
+    padding: 0px 15px;
     background-color: grey;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    margin-bottom: 0px;
 }
 
 .nav__wrapper {
@@ -204,7 +205,7 @@ NAVIGATION BAR
 }
 
 /*
-LANDING PAGE
+    LANDING PAGE
 */
 
 #landing__page {
@@ -451,6 +452,10 @@ button .loading {
     display: flex;
 } */
 
+
+
+
+
 .landing__page--logo {
     max-width: max-content;
     height: 50vh;
@@ -459,6 +464,202 @@ button .loading {
     vertical-align: middle;
 }
 
+
+/*
+    SEARCH RESULTS
+*/
+
+#search {
+    position: relative;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.progress__bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px; 
+    height: 10px;
+    overflow: hidden;
+    transform: translate(0,1);
+    transform-origin: center center;
+    transition: opacity 0.3s cubic-bezier(.4,0,.2,1), transform 0.4s cubic-bezier(.4,0,.2,1);
+    will-change: opacity, transform;
+    background-color: rgba(247, 204, 11, 0.38);
+}
+
+.progress__bar--track {
+    left: -50%;
+    animation: b 2s liner infinite;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    will-change: transform;
+    transform-origin: top left;
+}
+@keyframes b {
+    0% {
+        transform: translateX(0)
+    }
+
+    20% {
+        animation-timing-function: cubic-bezier(.5,0,.7,.5);
+        transform: translateX(0)
+    }
+
+    60% {
+        animation-timing-function: cubic-bezier(.3,.38,.55,.96);
+        transform: translateX(83.67%)
+    }
+
+    to {
+        transform: translateX(200.61%)
+    }
+}
+.progress__bar--track::after{
+    background-color: darkgoldenrod;
+    animation: c 2s linear infinite;
+    display: inline;
+    left: 0;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    will-change: transform;
+}
+@keyframes c {
+    0% {
+        transform: scaleX(.08)
+    }
+
+    35% {
+        animation-timing-function: cubic-bezier(.33,.12,.79,1);
+        transform: scaleX(.08)
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(.06,.11,.6,1);
+        transform: scaleX(.66)
+    }
+
+    to {
+        transform: scaleX(.08)
+    }
+}
+.progress__bar--fill {
+    left: -55%;
+    animation: d 2s linear infinite;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    will-change: transform;
+    transform-origin: top left;
+}
+@keyframes d {
+    0% {
+        animation-timing-function: cubic-bezier(.15,0,.52,.41);
+        transform: translateX(0)
+    }
+
+    25% {
+        animation-timing-function: cubic-bezier(.31,.28,.8,.73);
+        transform: translateX(37.65%)
+    }
+
+    50% {
+        animation-timing-function: cubic-bezier(.4,.63,.6,.9);
+        transform: translateX(84.39%)
+    }
+
+    to {
+        transform: translateX(160.28%)
+    }
+}
+
+
+.progress__bar--fill::after{
+    background-color: darkgoldenrod;
+    animation: e 2s linear infinite;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    will-change: transform
+    ;
+}
+@keyframes e {
+    0% {
+        animation-timing-function: cubic-bezier(.15,0,.52,.41);
+        transform: scaleX(.08)
+    }
+
+    20% {
+        animation-timing-function: cubic-bezier(.31,.28,.8,.73);
+        transform: scaleX(.46)
+    }
+
+    45% {
+        animation-timing-function: cubic-bezier(.4,.63,.6,.9);
+        transform: scaleX(.73)
+    }
+
+    to {
+        transform: scaleX(.08)
+    }
+}
+
+.progress__bar--buffer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    will-change: transform;
+    transform-origin: top left;
+}
+
+.progress__bar--buffer::after {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+}
+
+.search__results--wrapper {
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.search__info{
+    color: purple;
+    padding: 20px;
+    font-size: 28px;
+    line-height: 1.25;
+    display: inline-block;
+}
+
+.year__filter {
+    width: 30%;
+    min-width: 335;
+    display: flex;
+    flex-direction: column;
+}
+
+.date__range--wrapper {
+    margin-bottom: 12px;
+    font-size: 20px;
+    color: purple;
+}
 
 @media (max-height:1200px) {
     nav {
