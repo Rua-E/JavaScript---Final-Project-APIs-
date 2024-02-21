@@ -62,6 +62,16 @@ NAVIGATION BAR
     margin-bottom: 20px;
 }
 
+.movies__nav {
+    height: 365px;
+    padding: 40px 15px;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
 .nav__wrapper {
     position: relative;
     display: flex;
@@ -179,12 +189,22 @@ LANDING PAGE
     max-width: 1200px;
 }
 
+
 .website__description--container {
     z-index: 10;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.website__description--container--grey--background{
+    z-index: 10;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: grey;
 }
 
 .descripion__title .description__subtitle .search__wrapper{
