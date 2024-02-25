@@ -88,7 +88,7 @@ h2 {
 }
 
 .movies__nav--wrapper {
-    margin: -20px 0 0;
+    margin: 10px 0 0;
 }
 
 .logo {
@@ -99,8 +99,8 @@ h2 {
 .movies__logo {
     border-radius: 25%;
     border: 10px double darkred;
-    height: 60px;
-    width: 120px;
+    height: 50px;
+    width: 100px;
 }
 
 .nav__links {
@@ -191,7 +191,7 @@ h2 {
     right: 0;
     bottom: 0;
     z-index: 1;
-    border: 10px solid rgb(136, 9, 9);
+    border: 5px solid black;
 }
 
 .nav__overlay::after{
@@ -201,7 +201,9 @@ h2 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(173, 62, 6, 0.83);
+    background-color: rgba(185, 1, 1, 0.873);
+
+    /* background-color: rgba(139, 0, 0, 0.83); */
 }
 
 /*
@@ -250,8 +252,10 @@ h2 {
 
 .movies__text {
     color: white;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: rgb(48, 32, 32);
+    -webkit-text-stroke-width: 1px;
     margin-bottom: 40px;
+    font-weight: 900;
 }
 .movies__title-page {
     font-weight: 500;
@@ -310,7 +314,7 @@ h2 {
     display: inline-block;
     height: 60px;
     line-height: 40px;
-    border: 5px double darkred;
+    border: 5px double black;
     padding: 0 15px;
     transition: border-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
     width: 100%;
@@ -326,7 +330,7 @@ h2 {
 .movies__search:focus{
     color: white;
     background-color: black;
-    border: 5px solid yellow;
+    border: 5px solid black;
 }
 
 .movies__mag__glass {
@@ -551,7 +555,8 @@ button .loading {
     transform-origin: center center;
     transition: opacity 0.3s cubic-bezier(.4,0,.2,1), transform 0.4s cubic-bezier(.4,0,.2,1);
     will-change: opacity, transform;
-    background-color: rgba(247, 204, 11, 0.38);
+    background-color: darkred;
+    border: 1px solid black;
 }
 
 .progress__bar--track {
@@ -583,7 +588,9 @@ button .loading {
     }
 }
 .progress__bar--track::after{
-    background-color: darkgoldenrod;
+    background-color: rgba(25, 21, 21, 0.83);
+
+    /* background-color: rgba(255, 255, 255, 0.83); */
     animation: c 2s linear infinite;
     display: inline;
     left: 0;
@@ -644,7 +651,10 @@ button .loading {
 
 
 .progress__bar--fill::after{
-    background-color: darkgoldenrod;
+    background-color: rgba(25, 21, 21, 0.83);
+
+    /* background-color: rgb(249, 244, 242); */
+    /* background-color: rgba(185, 1, 1, 0.873); */
     animation: e 2s linear infinite;
     display: inline-block;
     position: absolute;
@@ -652,8 +662,7 @@ button .loading {
     content: " ";
     width: 100%;
     height: 100%;
-    will-change: transform
-    ;
+    will-change: transform;
 }
 @keyframes e {
     0% {
@@ -906,7 +915,7 @@ button .loading {
 
 .movies__spinner {
     font-size: 30px;
-    color: purple;
+    color: darkred;
     overflow: visible;
     animation: ;
 }
