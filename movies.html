@@ -28,23 +28,9 @@
             <a href="" class="nav__link home">
               <span class="movies__text redirect">Home</span>
             </a>
-            
           </div>
-          <div class="nav__menu">
-            <div class="nav__menu--displayed">
-              <figure class="displayed__dots">
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-              </figure>
-            </div>
-          </div>
+
+          
         </div>
         <div class="landing__page--container">
           <div class="movies__website__description--container">
@@ -65,8 +51,47 @@
             </div>
           </div>
         </div>
+        
         <div class="nav__overlay"></div>
+        <div class="nav__menu nav__menu--movies" onclick="openMenu()">
+          <div class="nav__menu--displayed">
+            <figure class="displayed__dots">
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+            </figure>
+          </div>
+        </div>
       </div>
+    </div>
+    <div class="menu__backdrop">
+      <button class="menu__exit--button" onclick="closeMenu()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <ul class="nav__links links__backdrop">
+        <li class="nav__link home link__backdrop">
+          <a
+            class="nav__link home link__backdrop"
+            href="#"
+            onclick="closeMenu()"
+            >Home</a
+          >
+        </li>
+        <li class="nav__link link__backdrop">
+          <a class="nav__link find link__backdrop" href="#" onclick="closeMenu()"
+            >Find Your Movie</a
+          >
+        </li>
+      </ul>
+    </div>
+      </div>
+      
     </section>
     <section id="search">
         <div class="progress__bar">
