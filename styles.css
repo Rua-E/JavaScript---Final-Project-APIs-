@@ -976,8 +976,16 @@ button .loading {
     color: darkred;
     overflow: visible;
     animation: ;
+    display: none;
+    /* ----- REMOVE THIS DISPLAY NONE LATER ------ */
 }
 
+.movie__container {
+    border: 2px dotted green;
+    border-radius: 20px;
+    padding: 20px;
+
+}
 
 @media (max-height:1200px) {
     nav {
@@ -1003,8 +1011,9 @@ button .loading {
     }
     .nav__menu--movies {
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: -40px;
+        right: -20px;
+        padding: 50px;
     }
     .nav__links {
         display: none;

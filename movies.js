@@ -7,6 +7,9 @@
 
 
 
-document.querySelector(".redirect").addEventListener('click', () => {
-    window.location.href = `http://127.0.0.1:5501/index.html`;
- });
+// document.querySelector(".redirect").addEventListener('click', () => {
+//     window.location.href = `http://127.0.0.1:5501/index.html`;
+//  });
+
+
+// console.log(fetch("https://www.omdbapi.com/?i=tt3896198&apikey=3e685048"));

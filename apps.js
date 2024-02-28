@@ -16,10 +16,6 @@
 
 
 
-
-
-
-
 // function submit(event) {
 //     event.preventDefault();
 //     const loading = document.querySelector(".spinner__overlay--loading");
@@ -36,6 +32,14 @@ function openMenu() {
  function closeMenu() {
      document.body.classList.remove('menu--open')
  }
+
+
+async function main() {
+    const movies = await fetch("https://www.omdbapi.com/?i=tt3896198&apikey=3e685048");
+    const moviesData = await movies.json();
+    console.log(moviesData);
+}
+main();
 
 
 
