@@ -981,10 +981,16 @@ button .loading {
 }
 
 .movie__container {
-    border: 2px dotted green;
+    border: 5px dotted green;
     border-radius: 20px;
     padding: 20px;
+    font-weight: 900;
+    color: darkgreen;
+}
 
+span {
+    color: black;
+    font-weight: 500;
 }
 
 @media (max-height:1200px) {
