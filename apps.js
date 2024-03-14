@@ -29,42 +29,40 @@ function closeMenu() {
   document.body.classList.remove("menu--open");
 }
 
+
+
+/* LINKING APIs */
+
+
+const moviesResultsElement = document.querySelector('.movies__results');
+
 async function main() {
-  const movies = await fetch(
-    "https://www.omdbapi.com/?i=tt3896198&apikey=3e685048");
-  const moviesData = await movies.json();
-  const moviesResultsElement = document.querySelector('.movies__results');
-  moviesResultsElement.innerHTML = moviesData
-  console.log(moviesData)
-  moviesData
-        .map((movies) => `<div class="movie__container">
+    const movie = await fetch("https://www.omdbapi.com/?s=fast&apikey=3e685048");
+    const moviesData = await movie.json();
+    console.log(moviesData.Search)
+    moviesResultsElement.innerHTML = moviesData.Search.map((movie) => moviesHTML(movie)).join("");
+}
+main();
+
+function showMovie(title) {
+    localStorage.setItem("title", title)
+    window.location.href = `${window.location.origin}/movies.html`
+}
+
+function moviesHTML(movie) {
+    return `<div class="movie__container" onclick="showMovie(${movie.Title})>
                 <div class="movie__name">
-                ${movies.year}: <span> XXXX </span>
+                Title: <span> ${movie.Title} </span>
                 </div>
                 <div class="movie__year">
-                Year: <span>0000</span>
-                </div>mo
-                <div class="movie__rated">
-                Rated: <span> XXXX </span>
-                </div>
-                <div class="movie__runtime">
-                Runtime: <span>00:00</span>
-                </div>
-                <div class="movie__genre">
-                Genre: <span> ???? </span>
-                </div>
-                <div class="movie__language">
-                Language: <span>English</span>
-                </div>
-                <div class="movie__ratings">
-                Rating: <span>*****</span>
+                Year: <span> ${movie.Year}</span>
                 </div>
                 <div class="movie__poster">
                 <figure>
-                    <i class="fa-solid fa-clapperboard"></i>
-                    <a href=""></a>
+                <img src="${movie.Poster}" />
                 </figure>
                 </div>
-            </div>`).join("");
+            </div>`
 }
-main();
+moviesHTML(movie);
+

@@ -993,6 +993,10 @@ span {
     font-weight: 500;
 }
 
+.movie__wrap {
+    border: 5px solid black;
+}
+
 @media (max-height:1200px) {
     nav {
         height: 165px;

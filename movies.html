@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="apps.js"></script>
+    <script src="apps.js" defer></script>
+    <script src="movies.js"></script>
     <script
       src="https://kit.fontawesome.com/aca4c41a73.js"
       crossorigin="anonymous"
@@ -140,37 +141,23 @@
               </figure>
             </div>
             <div class="movies__results">
-              <div class="movie__container">
-                <div class="movie__name">
-                  Title: <span> XXXX </span>
-                </div>
-                <div class="movie__year">
-                  Year: <span>0000</span>
-                </div>
-                <div class="movie__rated">
-                  Rated: <span> XXXX </span>
-                </div>
-                <div class="movie__runtime">
-                  Runtime: <span>00:00</span>
-                </div>
-                <div class="movie__genre">
-                  Genre: <span> ???? </span>
-                </div>
-                <div class="movie__language">
-                  Language: <span>English</span>
-                </div>
-                <div class="movie__ratings">
-                  Rating: <span>*****</span>
-                </div>
-                <div class="movie__poster">
-                  <figure>
-                    <i class="fa-solid fa-clapperboard"></i>
-                    <a href=""></a>
-                  </figure>
-                </div>
-              </div>
+              <div class="movie__wrap">
 
-            </div>
+                <div class="movie__container">
+                  <div class="movie__name">
+                    Title: <span> Title </span>
+                  </div>
+                  <div class="movie__year">
+                    Year: <span> Year </span>
+                  </div>
+                  <div class="movie__poster">
+                    <figure>
+                      <img src="${movie.Poster}" />
+                    </figure>
+                  </div>
+                </div> 
+              </div>
+              </div>
           </div>
         </div>
     </section>

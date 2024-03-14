@@ -13,3 +13,14 @@
 
 
 // console.log(fetch("https://www.omdbapi.com/?i=tt3896198&apikey=3e685048"));
+
+
+async function main() {
+    const title = localStorage.getItem("title")
+    const listing = await fetch(`http://{${window.location.origin}}/movies.html=${title}`)
+    const listingData = listing.json();
+
+    console.log(listing)
+}
+
+main()
