@@ -40,30 +40,30 @@ async function main() {
     const movie = await fetch("https://www.omdbapi.com/?s=fast&apikey=3e685048");
     const moviesData = await movie.json();
     console.log(moviesData.Search)
-    moviesResultsElement.innerHTML = moviesData.Search.map((movie) => moviesHTML(movie)).join("");
+    moviesResultsElement.innerHTML = moviesData.Search.map((movie) => moviesHTML(movie)).join('');
 }
 main();
 
-function showMovie(Title) {
-  localStorage.setItem("Title", Title)
-  window.location.href = `http://127.0.0.1:5501/movies.html`
-}
 
 function moviesHTML(movie) {
-    return `<div class="movie__container" onclick="showMovie(${movie.Title})">
-                <div class="movie__name">
-                Title: <span> ${movie.Title} </span>
-                </div>
-                <div class="movie__year">
-                Year: <span> ${movie.Year}</span>
-                </div>
-                <div class="movie__poster">
-                <figure>
-                <img src="${movie.Poster}" />
-                </figure>
-                </div>
-            </div>`
+  return `<div class="movie__container" onclick="showMovie(${movie.Title})">
+  <div class="movie__name">
+  Title: <span> ${movie.Title} </span>
+  </div>
+  <div class="movie__year">
+  Year: <span> ${movie.Year}</span>
+  </div>
+  <div class="movie__poster">
+  <figure>
+  <img src="${movie.Poster}" />
+  </figure>
+  </div>
+  </div>`
 }
 moviesHTML(movie);
 
 
+function showMovie(Term) {
+  localStorage.setItem("Term", Term)
+  window.location.href = `http://127.0.0.1:5501/movies.html`
+}
