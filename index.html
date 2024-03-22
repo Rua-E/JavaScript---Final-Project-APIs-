@@ -81,15 +81,14 @@
               type="text"
               placeholder="Search Movie HERE!"
               class="search"
+              onchange="OnSearchChange"
             />
             <button>
               <figure class="mag__glass">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </figure>
               <figure
-                class="spinner__overlay spinner__overlay--loading"
-                onsubmit="submit(event)"
-              >
+                class="spinner__overlay spinner__overlay--loading">
                 <i class="fas fa-spinner"></i>
               </figure>
             </button>

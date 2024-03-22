@@ -44,13 +44,13 @@ async function main() {
 }
 main();
 
-function showMovie(title) {
-    localStorage.setItem("title", title)
-    window.location.href = `${window.location.origin}/movies.html`
+function showMovie(Title) {
+  localStorage.setItem("Title", Title)
+  window.location.href = `http://127.0.0.1:5501/movies.html`
 }
 
 function moviesHTML(movie) {
-    return `<div class="movie__container" onclick="showMovie(${movie.Title})>
+    return `<div class="movie__container" onclick="showMovie(${movie.Title})">
                 <div class="movie__name">
                 Title: <span> ${movie.Title} </span>
                 </div>
@@ -65,4 +65,5 @@ function moviesHTML(movie) {
             </div>`
 }
 moviesHTML(movie);
+
 
