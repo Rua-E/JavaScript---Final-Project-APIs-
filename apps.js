@@ -37,21 +37,24 @@ function closeMenu() {
 const moviesResultsElement = document.querySelector('.movies__results');
 
 function moviesHTML(movie) {
-  return `<div class="movie__container" onclick="showMovie('${movie.Title}')">
-  <div class="movie__name">
-  Title: <span> ${movie.Title} </span>
-  </div>
-  <div class="movie__year">
-  Year: <span> ${movie.Year}</span>
-  </div>
-  <div class="movie__poster">
-  <figure>
-  <img src="${movie.Poster}" />
-  </figure>
-  </div>
-  </div>`
+  return [`<div class="movie__container" onclick="showMovie('${movie.Title}')">
+          <div class="movie__name">
+          Title: <span> ${movie.Title} </span>
+          </div>
+          <div class="movie__year">
+          Year: <span> ${movie.Year}</span>
+          </div>
+          <div class="movie__poster">
+          <figure>
+          <img src="${movie.Poster}" />
+          </figure>
+          </div>
+          </div>`,
+          `<div class="search__info"  onclick="showMovie('${movie.Title}')>
+          Search Results: <span> ${Term} </span>
+          </div>`]
 }
-moviesHTML(movie);
+// moviesHTML(movie);
 
 async function main() {
     const movies = await fetch("https://www.omdbapi.com/?s=fast&apikey=3e685048");

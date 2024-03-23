@@ -980,12 +980,29 @@ button .loading {
     /* ----- REMOVE THIS DISPLAY NONE LATER ------ */
 }
 
+.movies__results {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 .movie__container {
     border: 5px dotted green;
     border-radius: 20px;
     padding: 20px;
     font-weight: 900;
     color: darkgreen;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 30px;
+}
+
+.movie__poster {
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+
 }
 
 span {

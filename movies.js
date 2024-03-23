@@ -11,15 +11,14 @@ const Term = localStorage.getItem("Term")
 async function onSearchChange(event) {
     const Term = event.target.value
     getMovies(Term)
+    console.log(event)
 }
 
 async function getMovies(Term) {
     const listing = await fetch(`https://www.omdbapi.com/?s=(${Term})&apikey=3e685048`)
     const listingData = await listing.json();
-
-
-moviesResultsElement.innerHTML = listingData.Search.map(movie => movieTitlesHTML(movie)).join('');
-console.log(listingData);
+  moviesResultsElement.innerHTML = listingData.Search.map(movie => movieTitlesHTML(movie)).join('');
+  console.log(listingData);
 }
 
 function movieTitlesHTML(movie) {
