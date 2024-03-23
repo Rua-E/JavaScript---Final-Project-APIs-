@@ -4,24 +4,15 @@
 // Send all data requests to: http://www.omdbapi.com/?apikey=[yourkey]&
 // Poster API requests: http://img.omdbapi.com/?apikey=[yourkey]&
 
+const Term = localStorage.getItem("Term")
+const moviesResultsElement = document.querySelector('.movies__results');
 
-
-
-// document.querySelector(".redirect").addEventListener('click', () => {
-//     window.location.href = `http://127.0.0.1:5501/index.html`;
-//  });
-
-
-// console.log(fetch("https://www.omdbapi.com/?i=tt3896198&apikey=3e685048"));
-
-// const movieResultsElement = document.querySelector('.movies__results');
 
 async function onSearchChange(event) {
     const Term = event.target.value
     const listing = await fetch(`https://www.omdbapi.com/?s=(${Term}&apikey=3e685048`)
     const listingData = await listing.json();
-    moviesResultsElement.innerHTML = listingData.map(listing => `
-    <div class="movie__wrap">
+    moviesResultsElement.innerHTML = listingData.Search.map(listing => `
     <div class="movie__container">
       <div class="movie__name">
       Title: <span> ${movie.Title} </span>
@@ -35,19 +26,16 @@ async function onSearchChange(event) {
         </figure>
       </div>
     </div> 
-  </div>`).join('');
+  `).join('');
 }
- onSearchChange(event);
 
 async function main() {
-    const Term = localStorage.getItem("Term")
     const listing = await fetch(`https://www.omdbapi.com/?s=(${Term}&apikey=3e685048`)
     const listingData = await listing.json();
 
 
-moviesResultsElement.innerHTML = listingData.map(listing => `
-    <div class="movie__wrap">
-    <div class="movie__container">
+moviesResultsElement.innerHTML = listingData.Search.map(listing => 
+  `<div class="movie__container">
       <div class="movie__name">
       Title: <span> ${movie.Title} </span>
       </div>
@@ -59,8 +47,7 @@ moviesResultsElement.innerHTML = listingData.map(listing => `
       <img src="${movie.Poster}" />
         </figure>
       </div>
-    </div> 
-  </div>`).join('');
+    </div> `).join('');
 }
 
 main();

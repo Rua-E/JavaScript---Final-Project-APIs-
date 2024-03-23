@@ -36,17 +36,8 @@ function closeMenu() {
 
 const moviesResultsElement = document.querySelector('.movies__results');
 
-async function main() {
-    const movie = await fetch("https://www.omdbapi.com/?s=fast&apikey=3e685048");
-    const moviesData = await movie.json();
-    console.log(moviesData.Search)
-    moviesResultsElement.innerHTML = moviesData.Search.map((movie) => moviesHTML(movie)).join('');
-}
-main();
-
-
 function moviesHTML(movie) {
-  return `<div class="movie__container" onclick="showMovie(${movie.Title})">
+  return `<div class="movie__container" onclick="showMovie('${movie.Title}')">
   <div class="movie__name">
   Title: <span> ${movie.Title} </span>
   </div>
@@ -61,6 +52,14 @@ function moviesHTML(movie) {
   </div>`
 }
 moviesHTML(movie);
+
+async function main() {
+    const movies = await fetch("https://www.omdbapi.com/?s=fast&apikey=3e685048");
+    const moviesData = await movies.json();
+    console.log(moviesData.Search)
+    moviesResultsElement.innerHTML = moviesData.Search.map((movie) => moviesHTML(movie)).join('');
+  }
+main();
 
 
 function showMovie(Term) {
