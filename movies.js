@@ -5,49 +5,39 @@
 // Poster API requests: http://img.omdbapi.com/?apikey=[yourkey]&
 
 const Term = localStorage.getItem("Term")
-const moviesResultsElement = document.querySelector('.movies__results');
+// const moviesResultsElement = document.querySelector('.movies__results');
 
 
 async function onSearchChange(event) {
     const Term = event.target.value
-    const listing = await fetch(`https://www.omdbapi.com/?s=(${Term}&apikey=3e685048`)
-    const listingData = await listing.json();
-    moviesResultsElement.innerHTML = listingData.Search.map(listing => `
-    <div class="movie__container">
-      <div class="movie__name">
-      Title: <span> ${movie.Title} </span>
-      </div>
-      <div class="movie__year">
-      Year: <span> ${movie.Year}</span>
-      </div>
-      <div class="movie__poster">
-      <figure>
-      <img src="${movie.Poster}" />
-        </figure>
-      </div>
-    </div> 
-  `).join('');
+    getMovies(Term)
 }
 
-async function main() {
-    const listing = await fetch(`https://www.omdbapi.com/?s=(${Term}&apikey=3e685048`)
+async function getMovies(Term) {
+    const listing = await fetch(`https://www.omdbapi.com/?s=(${Term})&apikey=3e685048`)
     const listingData = await listing.json();
 
 
-moviesResultsElement.innerHTML = listingData.Search.map(listing => 
-  `<div class="movie__container">
-      <div class="movie__name">
-      Title: <span> ${movie.Title} </span>
-      </div>
-      <div class="movie__year">
-      Year: <span> ${movie.Year}</span>
-      </div>
-      <div class="movie__poster">
-      <figure>
-      <img src="${movie.Poster}" />
-        </figure>
-      </div>
-    </div> `).join('');
+moviesResultsElement.innerHTML = listingData.Search.map(movie => movieTitlesHTML(movie)).join('');
+console.log(listingData);
 }
 
-main();
+function movieTitlesHTML(movie) {
+  return `<div class="movie__container">
+    <div class="movie__name">
+    Title: <span> ${movie.Title} </span>
+    </div>
+    <div class="movie__year">
+    Year: <span> ${movie.Year}</span>
+    </div>
+    <div class="movie__poster">
+    <figure>
+    <img src="${movie.Poster}" />
+      </figure>
+    </div>
+    </div> `
+}
+
+getMovies(Term);
+
+
