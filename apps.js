@@ -31,6 +31,12 @@ function closeMenu() {
 
 
 
+setTimeout(function redirect() {
+  document.getElementById(redirectButton).addEventListener("click",redirect);
+  window.location = "http://127.0.0.1:5501/movies.html";
+}, 500);
+
+
 /* LINKING APIs */
 
 

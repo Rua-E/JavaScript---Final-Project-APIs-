@@ -472,6 +472,7 @@ button .loading {
 .spinner__overlay {
     display: none;
     animation: spinner 750ms infinite linear;
+    /* animation-duration: 3s; */
 }
 
 /* .spinner__overlay .loading:active {
@@ -961,10 +962,11 @@ button .loading {
     width: 100%;
     max-width: 1200px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 } 
 
-.movies__loading--state {
+/* .movies__loading--state {
     margin: 0px 0;
     width: 100%;
     display: flex;
@@ -978,7 +980,7 @@ button .loading {
     animation: ;
     display: none;
     /* ----- REMOVE THIS DISPLAY NONE LATER ------ */
-}
+/* } */ 
 
 .movies__results {
     margin-top: 30px;

@@ -17,9 +17,11 @@ async function onSearchChange(event) {
 async function getMovies(Term) {
     const listing = await fetch(`https://www.omdbapi.com/?s=(${Term})&apikey=3e685048`)
     const listingData = await listing.json();
-  moviesResultsElement.innerHTML = listingData.Search.map(movie => movieTitlesHTML(movie)).join('');
-  console.log(listingData);
-}
+    (moviesResultsElement.innerHTML = listingData.Search.map(movie => movieTitlesHTML(movie)).join(''));
+    console.log(listingData);
+  }
+  // listingData.sort((a,b) => a.${movie.Year} - b.${movie.Year})
+  // listingData = listingData.slice(0,10)
 
 function movieTitlesHTML(movie) {
   return `<div class="movie__container">
