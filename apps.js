@@ -39,14 +39,14 @@ const moviesResultsElement = document.querySelector('.movies__results');
 function moviesHTML(movie) {
   return [`<div class="movie__container" onclick="showMovie('${movie.Title}')">
           <div class="movie__name">
-          Title: <span> ${movie.Title} </span>
+          <span> ${movie.Title} </span>
           </div>
           <div class="movie__year">
-          Year: <span> ${movie.Year}</span>
+          <span> ${movie.Year}</span>
           </div>
-          <div class="movie__poster">
+          <div>
           <figure>
-          <img src="${movie.Poster}" />
+          <img class="movie__poster" src="${movie.Poster}" />
           </figure>
           </div>
           </div>`,
