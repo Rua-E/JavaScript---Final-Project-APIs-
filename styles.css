@@ -30,7 +30,7 @@ h2 {
     line-height: 1.5;
     color: #0a1f44;
     text-transform: uppercase;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
@@ -350,7 +350,7 @@ h2 {
 }
 
 
-.search {
+/* .search {
     background-color: #fff;
     border-radius: 20px;
     border: 1px solid #0a1f44;
@@ -364,7 +364,7 @@ h2 {
     width: 100%;
     font-size: 24px;
     padding-left: 25px;
-}
+} */
 
 .movies__search {
     background-color: #fff;
@@ -428,6 +428,7 @@ button {
     background-color: darkred;
     box-shadow: 7px 7px 17px rgba(134, 93, 204, .3);
     cursor: pointer;
+    margin-bottom: 50px;
 }
 
 button:hover {
@@ -1016,12 +1017,14 @@ button .loading {
 
 .movie__poster {
     width: 100%;
+    max-width: 250px;
     height: 100%;
 }
 
 span {
     color: black;
     font-weight: 500;
+    width: 100%;
 }
 
 .movie__wrap {
@@ -1042,7 +1045,7 @@ span {
         font-size: 57px;
     }
     h2 {
-        margin-bottom: 80px;
+        margin-bottom: 40px;
     }
 }
 

@@ -29,13 +29,16 @@ function closeMenu() {
   document.body.classList.remove("menu--open");
 }
 
+// HOW TO REDIRECT TO MOVIES PAGE WHEN YOU SEARCH ON HOME PAGE?
 
+// setTimeout(function redirect() {
+//   document.getElementById(redirectButton).addEventListener("click",redirect);
+//   window.location = "http://127.0.0.1:5501/movies.html";
+// }, 500);
 
-setTimeout(function redirect() {
-  document.getElementById(redirectButton).addEventListener("click",redirect);
-  window.location = "http://127.0.0.1:5501/movies.html";
-}, 500);
-
+function delay(URL) {
+  setTimeout(function(){ window.location = URL}, 1000);
+}
 
 /* LINKING APIs */
 
@@ -43,7 +46,7 @@ setTimeout(function redirect() {
 const moviesResultsElement = document.querySelector('.movies__results');
 
 function moviesHTML(movie) {
-  return [`<div class="movie__container" onclick="showMovie('${movie.Title}')">
+  return `<div class="movie__container" onclick="showMovie('${movie.Title}')">
           <div class="movie__name">
           <span> ${movie.Title} </span>
           </div>
@@ -55,23 +58,23 @@ function moviesHTML(movie) {
           <img class="movie__poster" src="${movie.Poster}" />
           </figure>
           </div>
-          </div>`,
-          `<div class="search__info"  onclick="showMovie('${movie.Title}')>
-          Search Results: <span> ${Term} </span>
-          </div>`]
-}
+          </div>`
+        }
+// `<div class="search__info"  onclick="showMovie('${movie.Title}')>
+// Search Results: <span> ${term} </span>
+// </div>`;
 // moviesHTML(movie);
 
 async function main() {
-    const movies = await fetch("https://www.omdbapi.com/?s=fast&apikey=3e685048");
+    const movies = await fetch(`https://www.omdbapi.com/?s=${term}&apikey=3e685048`);
     const moviesData = await movies.json();
     console.log(moviesData.Search)
     moviesResultsElement.innerHTML = moviesData.Search.map((movie) => moviesHTML(movie)).join('');
   }
-main();
+// main();
 
 
-function showMovie(Term) {
-  localStorage.setItem("Term", Term)
+function showMovie(term) {
+  localStorage.setItem("term", term)
   window.location.href = `http://127.0.0.1:5501/movies.html`
 }
