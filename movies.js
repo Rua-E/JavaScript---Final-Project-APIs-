@@ -13,7 +13,7 @@ async function getMovies(term ) {
     const listing = await fetch(`https://www.omdbapi.com/?s=${term}&apikey=3e685048`)
     const listingData = await listing.json();
     moviesResultsElement.innerHTML = listingData.Search.map((movie) => movieTitlesHTML(movie)).join("");
-    listingData.Search.sort((a,b) =>  b.Year-a.Year);
+    listingData.Search.sort((a,b) =>  b.Year - a.Year);
     listingData.Search = listingData.Search.slice(0,6)
     console.log(listingData);
     console.log(term)
